@@ -14,9 +14,9 @@ RandomColorPicker is a software application designed to assist users in selectin
 - Simplifies Color Selection: Eliminates the need for manual color picking.
 - Offers Versatility: Can be used for various purposes, such as design, artwork, and development.
 
-Developed using Delphi Pascal and its TColor data type.
+Developed using Object Pascal, using Delphi 2010 and its TColor data type.
 
 For any questions or feedback, please reach out to **real.bellic.code@gmail.com**.
 
-![Alt text](image-2.png)
-![Alt text](image-3.png)
+![Alt text](image.png)
+![Alt text](image-1.png)
