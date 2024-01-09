@@ -1,0 +1,59 @@
+unit ColorLabelPicker_u;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ExtCtrls, StdCtrls, ComCtrls, Buttons, CheckLst;
+
+type
+  TfrmColorLabelPicker = class(TForm)
+    memColorOptions: TMemo;
+    btnColorPicker: TButton;
+    shpColorVisual: TShape;
+    pgc1: TPageControl;
+    tsColorPicker: TTabSheet;
+    tsSettings: TTabSheet;
+    chklstColorOptions: TCheckListBox;
+    bmbColorListRefresh: TBitBtn;
+    procedure btnColorPickerClick(Sender: TObject);
+    procedure bmbColorListRefreshClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmColorLabelPicker: TfrmColorLabelPicker;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmColorLabelPicker.bmbColorListRefreshClick(Sender: TObject);
+var
+  I: Integer;
+begin
+memColorOptions.Lines.Clear;
+
+for I := 0 to chklstColorOptions.Count - 1 do
+begin
+if chklstColorOptions.Checked[I] = True then
+  memColorOptions.Lines.Add(chklstColorOptions.Items[I])
+end;
+end;
+
+procedure TfrmColorLabelPicker.btnColorPickerClick(Sender: TObject);
+var
+  iIndex : Integer;
+  sColor : string;
+begin
+Randomize;
+iIndex := Random(memColorOptions.Lines.Count)+0;
+sColor := 'cl'+ memColorOptions.Lines[iIndex];
+
+shpColorVisual.Brush.Color := ();
+end;
+
+end.

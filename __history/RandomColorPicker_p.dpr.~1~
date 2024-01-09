@@ -1,0 +1,14 @@
+program ColorLabelPicker_p;
+
+uses
+  Forms,
+  ColorLabelPicker_u in 'ColorLabelPicker_u.pas' {frmColorLabelPicker};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmColorLabelPicker, frmColorLabelPicker);
+  Application.Run;
+end.
