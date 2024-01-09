@@ -19,6 +19,7 @@ type
     procedure btnColorPickerClick(Sender: TObject);
     procedure bmbColorListRefreshClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
+    procedure tsColorPickerShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -78,7 +79,7 @@ begin
   if Length(arrChosenColors) > 0 then
   begin
     Randomize;
-    iIndex := Random(Length(arrChosenColors) - 1);
+    iIndex := Random(Length(arrChosenColors));
     sColor := 'cl' + arrChosenColors[iIndex];
     col := StringToColor(sColor);
 
@@ -92,6 +93,11 @@ end;
 procedure TfrmColorLabelPicker.FormActivate(Sender: TObject);
 begin
 pgcMain.ActivePage := tsChooseColors;
+end;
+
+procedure TfrmColorLabelPicker.tsColorPickerShow(Sender: TObject);
+begin
+shpColorVisual.Brush.Color := clWindow;
 end;
 
 end.

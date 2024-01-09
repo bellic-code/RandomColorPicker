@@ -23,12 +23,11 @@ object frmColorLabelPicker: TfrmColorLabelPicker
     Top = 0
     Width = 393
     Height = 217
-    ActivePage = tsChooseColors
+    ActivePage = tsColorPicker
     TabOrder = 0
     object tsColorPicker: TTabSheet
       Caption = 'Color Picker'
-      ExplicitLeft = 8
-      ExplicitTop = 28
+      OnShow = tsColorPickerShow
       object shpColorVisual: TShape
         Left = 3
         Top = 3
